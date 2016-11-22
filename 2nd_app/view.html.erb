@@ -1,0 +1,14 @@
+<div class="block">
+  <div class="result">
+    <div class="div-table-legend">Результат</div>
+    <div class="div-table-row">
+      <div class="div-table-col">
+        <% if params[:server] %>
+        <%=raw @res %>
+        <% else %>
+        <%= @res %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
