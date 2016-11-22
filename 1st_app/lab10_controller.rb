@@ -5,8 +5,6 @@ class Lab10Controller < ApplicationController
   end
 
   def view
- #   @file = File.open('my.xml', 'w+')
- #   string = '<?xml-stylesheet type="text/xsl" href="some_transformer.xslt"?>'
     n=params[:n].to_i
     @arr=(1..Float::INFINITY).lazy.map{|x| 2**x - 1}.take_while{|x| x < n}.select{|x| Prime.prime?(x)}.to_a
     respond_to do |format|
@@ -14,9 +12,6 @@ class Lab10Controller < ApplicationController
       format.rss { render xml: @arr}
       format.any
     end
-  #@file.puts(string)
-   # @file.write(@arr.to_xml)
-   # @file.close
   end
 end
 
