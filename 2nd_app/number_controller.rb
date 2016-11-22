@@ -10,7 +10,7 @@ class NumberController < ApplicationController
       template = Nokogiri::XSLT(File.read('template.xslt'))
       @res = template.transform(@xml)
     elsif params[:client]
-      @res = @xml
+      render xml: @xml
     end
   end
 end
